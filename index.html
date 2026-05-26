@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locos por las Motos — La Juguetería #1 de los Motociclistas en Costa Rica</title>
+  <meta name="description" content="Tienda de motos con el inventario más grande de Costa Rica. Accesorios, cascos, repuestos y taller especializado en San Pedro, San José. Envíos a todo el país el mismo día.">
+  <meta name="keywords" content="tienda de motos Costa Rica, accesorios de moto CR, cascos de moto, taller de motos San José, repuestos de moto">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Locos por las Motos","telephone":["+50625242301","+50661134646"],"address":{"@type":"PostalAddress","streetAddress":"25m al este del Banco Popular, San Pedro","addressLocality":"Montes de Oca","addressRegion":"San José","addressCountry":"CR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:30","closes":"14:00"}]}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #080808; color: #fff; font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+    /* ── TOKENS ── */
+    :root {
+      --orange:      #E8621A;
+      --orange-lt:   #F5841F;
+      --black:       #080808;
+      --dark:        #0f0f0f;
+      --surface:     #161616;
+      --surface2:    #1f1f1f;
+      --white:       #FFFFFF;
+      --gray:        #999999;
+      --gray-lt:     #cccccc;
+      --fd: 'Barlow Condensed', sans-serif;
+      --fb: 'Barlow', sans-serif;
+      --fs: 'Merriweather', Georgia, serif;
+    }
+
+    /* ── UTILS ── */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    @media(max-width:600px){ .container { padding: 0 20px; } }
+
+    .section-eyebrow {
+      font-family: var(--fb);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .section-heading {
+      font-family: var(--fd);
+      font-weight: 900;
+      font-style: italic;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .section-heading .dim { color: var(--gray); }
+    .section-body {
+      font-family: var(--fs);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--gray-lt);
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: var(--fb); font-weight: 600; font-size: 0.82rem;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      padding: 14px 28px; border-radius: 2px; cursor: pointer;
+      transition: all 0.22s ease; border: 1.5px solid transparent;
+      white-space: nowrap;
+    }
+    .btn-solid  { background: var(--orange); color: #fff; border-color: var(--orange); }
+    .btn-solid:hover { background: var(--orange-lt); border-color: var(--orange-lt); transform: translateY(-1px); }
+    .btn-ghost  { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
+    .btn-wa     { background: #25D366; color: #fff; border-color: #25D366; }
+    .btn-wa:hover { background: #1da851; border-color: #1da851; transform: translateY(-1px); }
+    .btn svg    { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ── HEADER ── */
+    #hdr {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    }
+    #hdr.solid { background: rgba(8,8,8,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .hdr-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; gap: 32px;
+    }
+    .hdr-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .hdr-logo img { width: 44px; height: 44px; border-radius: 50%; }
+    .hdr-logo-txt { font-family: var(--fd); font-weight: 900; font-size: 1rem; text-transform: uppercase; line-height: 1.1; color: #fff; }
+    .hdr-logo-txt span { color: var(--orange); }
+    nav.hdr-nav { display: flex; align-items: center; gap: 2px; }
+    nav.hdr-nav a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; padding: 6px 12px; border-radius: 2px; transition: color 0.2s; }
+    nav.hdr-nav a:hover { color: #fff; }
+    .hdr-wa { display: flex; align-items: center; gap: 8px; background: #25D366; color: #fff; font-family: var(--fb); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em; text-decoration: none; padding: 9px 18px; border-radius: 2px; white-space: nowrap; transition: background 0.2s; }
+    .hdr-wa:hover { background: #1da851; }
+    .hdr-wa svg { width: 16px; height: 16px; }
+    .hdr-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hdr-hamburger span { display: block; width: 22px; height: 1.5px; background: #fff; transition: all 0.3s; }
+    @media(max-width:900px){
+      nav.hdr-nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(8,8,8,0.98); flex-direction: column; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      nav.hdr-nav.open { display: flex; }
+      nav.hdr-nav a { width: 100%; padding: 12px 24px; font-size: 0.9rem; }
+      .hdr-hamburger { display: flex; }
+    }
+    @media(max-width:520px){ .hdr-logo-txt { display: none; } }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('img/hero-bg.jpg') center / cover no-repeat;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(8,8,8,0.25) 0%,
+        rgba(8,8,8,0.15) 30%,
+        rgba(8,8,8,0.5) 65%,
+        rgba(8,8,8,0.93) 100%
+      );
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 0 80px;
+    }
+    .hero-content .container {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: flex-end;
+      gap: 40px;
+    }
+    .hero-eyebrow { font-family: var(--fb); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; display: block; }
+    .hero-title {
+      font-family: var(--fd); font-weight: 900; font-style: italic;
+      font-size: clamp(3.5rem, 9vw, 9rem);
+      line-height: 0.88; text-transform: uppercase;
+      text-shadow: 0 2px 40px rgba(0,0,0,0.6);
+      margin-bottom: 28px;
+    }
+    .hero-title .dim { color: rgba(255,255,255,0.35); }
+    .hero-sub { font-family: var(--fs); font-weight: 300; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.7); max-width: 480px; margin-bottom: 36px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-right { text-align: right; }
+    .hero-stat { font-family: var(--fd); font-weight: 900; font-style: italic; font-size: 5rem; color: var(--orange); line-height: 0.9; }
+    .hero-stat-lbl { font-family: var(--fb); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 6px; }
+    .hero-scroll {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 6px;
+      opacity: 0.4; animation: scrollBounce 2.2s infinite;
+    }
+    .hero-scroll span { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; }
+    @keyframes scrollBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+    @media(max-width:768px){ .hero-content .container { grid-template-columns: 1fr; } .hero-right { display: none; } }
+
+    /* ── TRUST STRIP ── */
+    #trust { background: var(--orange); padding: 0; }
+    .trust-row { display: flex; overflow-x: auto; }
+    .trust-row::-webkit-scrollbar { display: none; }
+    .trust-item { display: flex; align-items: center; gap: 12px; padding: 18px 32px; border-right: 1px solid rgba(255,255,255,0.2); flex-shrink: 0; }
+    .trust-item:last-child { border-right: none; }
+    .trust-item span:first-child { font-size: 1.4rem; }
+    .trust-item strong { font-family: var(--fb); font-size: 0.82rem; font-weight: 700; color: #fff; white-space: nowrap; }
+
+    /* ── NOSOTROS ── */
+    #nosotros { background: var(--black); padding: 120px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; }
+    .about-img {
+      position: relative; overflow: hidden;
+      background: url('img/nosotros-bg.jpg') center/cover no-repeat;
+      min-height: 600px;
+    }
+    .about-img::after { content:''; position:absolute; inset:0; background: rgba(8,8,8,0.35); }
+    .about-img-tag {
+      position: absolute; bottom: 32px; left: 32px; z-index: 2;
+      font-family: var(--fd); font-weight: 900; font-style: italic;
+      font-size: 1.5rem; text-transform: uppercase; color: var(--orange);
+      border-left: 3px solid var(--orange); padding-left: 14px;
+    }
+    .about-body-wrap {
+      background: var(--surface); padding: 80px 64px;
+      display: flex; flex-direction: column; justify-content: center; gap: 32px;
+    }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06); margin-top: 8px; }
+    .astat { background: var(--surface); padding: 24px 20px; }
+    .astat-num { font-family: var(--fd); font-weight: 900; font-style: italic; font-size: 2.8rem; color: var(--orange); line-height: 1; }
+    .astat-lbl { font-family: var(--fb); font-size: 0.75rem; font-weight: 600; color: var(--gray); letter-spacing: 0.05em; margin-top: 4px; }
+    @media(max-width:900px){ .about-grid { grid-template-columns: 1fr; } .about-img { min-height: 380px; } .about-body-wrap { padding: 48px 32px; } }
+
+    /* ── PRODUCTOS ── */
+    #productos { background: var(--dark); padding: 120px 0; }
+    .prod-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 56px; }
+    .prod-header-cta { font-family: var(--fb); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); text-decoration: none; display: flex; align-items: center; gap: 6px; flex-shrink: 0; border-bottom: 1px solid var(--orange); padding-bottom: 2px; transition: opacity 0.2s; }
+    .prod-header-cta:hover { opacity: 0.7; }
+
+    /* Group label */
+    .prod-group { margin-bottom: 72px; }
+    .prod-group:last-child { margin-bottom: 0; }
+    .prod-group-label {
+      display: flex; align-items: center; gap: 16px;
+      font-family: var(--fd); font-weight: 700; font-size: 1rem;
+      text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray);
+      margin-bottom: 24px;
+    }
+    .prod-group-label::after { content:''; flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+
+    /* Horizontal scroll track */
+    .prod-track { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .prod-track::-webkit-scrollbar { height: 2px; }
+    .prod-track::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+    .prod-track::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+
+    .prod-card {
+      flex-shrink: 0; width: 240px; scroll-snap-align: start;
+      position: relative; overflow: hidden; border-radius: 2px; cursor: pointer;
+      background: var(--surface);
+    }
+    .prod-card-img {
+      width: 100%; height: 340px; object-fit: cover; object-position: center;
+      display: block;
+      filter: brightness(0.65) saturate(0.75) contrast(1.05);
+      transition: filter 0.4s ease, transform 0.5s ease;
+    }
+    .prod-card:hover .prod-card-img { filter: brightness(0.8) saturate(0.9) contrast(1.05); transform: scale(1.04); }
+    .prod-card-footer {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, transparent 100%);
+      padding: 32px 20px 20px;
+    }
+    .prod-card-title { font-family: var(--fd); font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; }
+    .prod-card-sub { font-family: var(--fb); font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 3px; }
+    .prod-card-border { position: absolute; inset: 0; border: 1.5px solid transparent; transition: border-color 0.3s; pointer-events: none; }
+    .prod-card:hover .prod-card-border { border-color: var(--orange); }
+
+    /* Placeholder card */
+    .prod-card-placeholder { background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%); display: flex; align-items: center; justify-content: center; height: 340px; font-size: 3rem; }
+
+    .prod-cta-strip {
+      margin-top: 64px; padding: 48px 40px;
+      border: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .prod-cta-txt { font-family: var(--fd); font-weight: 900; font-style: italic; font-size: clamp(1.3rem, 3vw, 2.2rem); text-transform: uppercase; }
+    @media(max-width:600px){ .prod-cta-strip { flex-direction: column; align-items: flex-start; } }
+
+    /* ── TALLER ── */
+    #taller {
+      position: relative; padding: 0; overflow: hidden;
+    }
+    .taller-bg {
+      position: absolute; inset: 0;
+      background: url('img/taller-bg.jpg') center/cover no-repeat;
+    }
+    .taller-bg::after { content:''; position:absolute; inset:0; background: rgba(8,8,8,0.82); }
+    .taller-inner { position: relative; z-index: 2; padding: 120px 0; }
+    .taller-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .taller-left {}
+    .services-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 40px; border: 1px solid rgba(255,255,255,0.07); }
+    .svc {
+      padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-right: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; gap: 12px;
+      transition: background 0.2s;
+    }
+    .svc:nth-child(2n){ border-right: none; }
+    .svc:hover { background: rgba(255,255,255,0.03); }
+    .svc.featured { background: rgba(232,98,26,0.08); border-color: rgba(232,98,26,0.25); grid-column: span 2; border-right: none; }
+    .svc-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+    .svc-name { font-family: var(--fb); font-size: 0.83rem; font-weight: 500; color: rgba(255,255,255,0.85); }
+    .svc.featured .svc-name { color: var(--orange); font-weight: 700; font-size: 0.9rem; }
+    .taller-right { display: flex; flex-direction: column; gap: 24px; }
+    .taller-callout { border-left: 3px solid var(--orange); padding-left: 28px; }
+    .taller-callout p { font-family: var(--fs); font-weight: 300; font-size: 1rem; color: var(--gray-lt); line-height: 1.8; }
+    @media(max-width:900px){ .taller-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+    /* ── ENVÍOS ── */
+    #envios { background: var(--surface); padding: 100px 0; }
+    .envios-layout { display: grid; grid-template-columns: auto 1fr; gap: 80px; align-items: center; }
+    .envios-big-txt {
+      font-family: var(--fd); font-weight: 900; font-style: italic;
+      font-size: clamp(6rem, 14vw, 14rem); line-height: 0.82;
+      color: var(--orange); text-transform: uppercase; user-select: none;
+      text-shadow: 0 0 80px rgba(232,98,26,0.25);
+    }
+    .envios-big-txt small { display: block; color: rgba(255,255,255,0.2); font-size: 0.28em; letter-spacing: 0.1em; }
+    .envios-right {}
+    .carriers { display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
+    .carrier { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: var(--surface2); border-radius: 2px; }
+    .carrier-icon { font-size: 1.3rem; }
+    .carrier-name { font-family: var(--fb); font-weight: 600; font-size: 0.88rem; color: #fff; }
+    .carrier-sub { font-family: var(--fb); font-size: 0.75rem; color: var(--gray); }
+    @media(max-width:768px){ .envios-layout { grid-template-columns: 1fr; } .envios-big-txt { font-size: clamp(5rem, 18vw, 9rem); } }
+
+    /* ── GALERÍA ── */
+    #galeria { background: var(--black); padding: 120px 0; }
+    .gallery-intro { text-align: center; margin-bottom: 56px; }
+    .gallery-intro .section-body { max-width: 500px; margin: 16px auto 0; }
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 280px 280px;
+      gap: 8px;
+    }
+    .gal-item { overflow: hidden; position: relative; cursor: pointer; }
+    .gal-item:nth-child(1) { grid-column: span 5; }
+    .gal-item:nth-child(2) { grid-column: span 4; }
+    .gal-item:nth-child(3) { grid-column: span 3; }
+    .gal-item:nth-child(4) { grid-column: span 3; }
+    .gal-item:nth-child(5) { grid-column: span 5; }
+    .gal-item:nth-child(6) { grid-column: span 4; }
+    .gal-item img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      display: block;
+      filter: brightness(0.6) saturate(0.7);
+      transition: filter 0.4s, transform 0.5s;
+    }
+    .gal-item:hover img { filter: brightness(0.85) saturate(0.95); transform: scale(1.05); }
+    .gal-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.6) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 16px; }
+    .gal-item:hover .gal-overlay { opacity: 1; }
+    .gal-overlay span { font-family: var(--fb); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; }
+    @media(max-width:768px){
+      .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gal-item { grid-column: span 1 !important; aspect-ratio: 4/3; }
+    }
+
+    /* ── TESTIMONIOS ── */
+    #testimonios { background: var(--surface); padding: 100px 0; }
+    .test-header { text-align: center; margin-bottom: 64px; }
+    .test-header .section-body { max-width: 500px; margin: 16px auto 0; }
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(255,255,255,0.05); }
+    .test-card { background: var(--surface); padding: 40px 36px; position: relative; transition: background 0.3s; }
+    .test-card:hover { background: var(--surface2); }
+    .test-stars { letter-spacing: 2px; color: var(--orange); font-size: 0.85rem; margin-bottom: 20px; }
+    .test-quote { font-family: var(--fs); font-style: italic; font-weight: 300; font-size: 0.93rem; color: var(--gray-lt); line-height: 1.85; margin-bottom: 28px; }
+    .test-author { display: flex; align-items: center; gap: 12px; }
+    .test-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; border: 1.5px solid rgba(232,98,26,0.4); flex-shrink: 0; }
+    .test-name { font-family: var(--fb); font-weight: 700; font-size: 0.85rem; color: #fff; }
+    .test-meta { font-family: var(--fb); font-size: 0.72rem; color: var(--gray); margin-top: 1px; }
+
+    /* ── REDES ── */
+    #redes { background: var(--black); padding: 120px 0; }
+    .redes-inner { text-align: center; }
+    .redes-giant { font-family: var(--fd); font-weight: 900; font-style: italic; font-size: clamp(5rem, 14vw, 13rem); color: var(--orange); line-height: 0.88; text-shadow: 0 0 80px rgba(232,98,26,0.3); }
+    .redes-lbl { font-family: var(--fb); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin: 12px 0 40px; }
+    .redes-text { font-family: var(--fs); font-weight: 300; font-size: 1rem; color: var(--gray-lt); max-width: 520px; margin: 0 auto 48px; line-height: 1.8; }
+    .social-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .social-btn { display: flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 2px; font-family: var(--fb); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.05em; text-decoration: none; border: 1.5px solid transparent; transition: all 0.22s; }
+    .social-btn svg { width: 18px; height: 18px; }
+    .sb-fb  { background: #1877F2; color: #fff; border-color: #1877F2; }
+    .sb-fb:hover  { background: #0d6efd; transform: translateY(-2px); }
+    .sb-ig  { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
+    .sb-ig:hover  { opacity: 0.88; transform: translateY(-2px); }
+    .sb-tt  { background: transparent; color: #fff; border-color: rgba(255,255,255,0.25); }
+    .sb-tt:hover  { border-color: #fff; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--dark); padding: 100px 0; }
+    .faq-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid rgba(255,255,255,0.07); }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 22px 0; background: none; border: none; color: rgba(255,255,255,0.75);
+      font-family: var(--fb); font-weight: 600; font-size: 0.88rem; text-align: left; cursor: pointer;
+      transition: color 0.2s;
+    }
+    .faq-item.open .faq-q { color: var(--orange); }
+    .faq-chevron { transition: transform 0.3s; flex-shrink: 0; opacity: 0.5; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); opacity: 1; }
+    .faq-a { display: none; padding: 0 0 22px; font-family: var(--fs); font-size: 0.86rem; font-weight: 300; color: var(--gray-lt); line-height: 1.8; }
+    .faq-item.open .faq-a { display: block; }
+    @media(max-width:768px){ .faq-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* ── UBICACIÓN ── */
+    #ubicacion { background: var(--black); padding: 100px 0; }
+    .ubicacion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; }
+    .ubicacion-info { background: var(--surface); padding: 64px; display: flex; flex-direction: column; gap: 28px; }
+    .ubi-item { display: flex; gap: 18px; align-items: flex-start; }
+    .ubi-icon { width: 40px; height: 40px; border: 1px solid rgba(232,98,26,0.35); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .ubi-label { font-family: var(--fb); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+    .ubi-val { font-family: var(--fb); font-size: 0.88rem; font-weight: 500; color: #fff; line-height: 1.6; }
+    .ubi-val a { color: #fff; text-decoration: none; transition: color 0.2s; }
+    .ubi-val a:hover { color: var(--orange); }
+    .ubi-hor { display: grid; grid-template-columns: auto 1fr; gap: 2px 16px; }
+    .ubi-hor-day { font-size: 0.8rem; color: var(--gray); }
+    .ubi-hor-time { font-size: 0.8rem; color: var(--gray-lt); font-weight: 600; }
+    .ubi-btns { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 8px; }
+    .map-wrap { min-height: 500px; }
+    .map-wrap iframe { width: 100%; height: 100%; min-height: 500px; border: none; display: block; filter: grayscale(0.4) brightness(0.85); }
+    @media(max-width:900px){ .ubicacion-grid { grid-template-columns: 1fr; } .ubicacion-info { padding: 40px 28px; } }
+
+    /* ── FORMULARIO ── */
+    #contacto { background: var(--surface2); padding: 100px 0; }
+    .form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .form-note-txt { font-family: var(--fs); font-weight: 300; font-size: 0.95rem; color: var(--gray-lt); line-height: 1.8; margin: 24px 0 32px; }
+    .form-note-txt strong { color: var(--orange); }
+    form { display: flex; flex-direction: column; gap: 14px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { font-family: var(--fb); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); display: block; margin-bottom: 6px; }
+    input, textarea {
+      width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      padding: 13px 16px; color: #fff; font-family: var(--fb); font-size: 0.88rem;
+      border-radius: 0; outline: none; transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus { border-color: var(--orange); }
+    input::placeholder, textarea::placeholder { color: var(--gray); }
+    textarea { resize: vertical; min-height: 120px; }
+    .form-success { display: none; background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.3); padding: 16px; font-family: var(--fb); font-size: 0.88rem; color: #4ade80; margin-top: 8px; }
+    @media(max-width:768px){ .form-layout { grid-template-columns: 1fr; gap: 48px; } .field-row { grid-template-columns: 1fr; } }
+
+    /* ── FOOTER ── */
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); padding: 60px 0 28px; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .ftr-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 16px; }
+    .ftr-logo img { width: 44px; height: 44px; border-radius: 50%; }
+    .ftr-logo-txt { font-family: var(--fd); font-weight: 900; font-size: 1rem; text-transform: uppercase; line-height: 1.1; color: #fff; }
+    .ftr-logo-txt span { color: var(--orange); }
+    .ftr-tagline { font-family: var(--fb); font-size: 0.8rem; color: var(--gray); line-height: 1.6; max-width: 260px; }
+    .ftr-socials { display: flex; gap: 8px; margin-top: 20px; }
+    .ftr-soc { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--gray); text-decoration: none; transition: all 0.2s; }
+    .ftr-soc:hover { border-color: var(--orange); color: var(--orange); }
+    .ftr-soc svg { width: 14px; height: 14px; }
+    .ftr-col h5 { font-family: var(--fb); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; }
+    .ftr-col a { display: block; font-family: var(--fb); font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+    .ftr-col a:hover { color: #fff; }
+    .ftr-col p { font-family: var(--fb); font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .footer-bot { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .footer-copy { font-family: var(--fb); font-size: 0.75rem; color: var(--gray); }
+    @media(max-width:900px){ .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:520px){ .footer-top { grid-template-columns: 1fr; } }
+
+    /* ── WHATSAPP FLOAT ── */
+    #wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    }
+    .wa-float-btn {
+      width: 56px; height: 56px; border-radius: 50%; background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: waPulse 3s infinite;
+    }
+    .wa-float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,0.55); }
+    .wa-float-btn svg { width: 28px; height: 28px; }
+    @keyframes waPulse { 0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.35)} 50%{box-shadow:0 4px 32px rgba(37,211,102,0.6),0 0 0 8px rgba(37,211,102,0.07)} }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="container">
+    <div class="hdr-inner">
+      <a href="#inicio" class="hdr-logo">
+        <img src="assets/logo.png" alt="Locos por las Motos">
+        <div class="hdr-logo-txt">Locos por<span>las Motos</span></div>
+      </a>
+      <nav class="hdr-nav" id="hdr-nav">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#productos">Productos</a>
+        <a href="#taller">Taller</a>
+        <a href="#galeria">Galería</a>
+        <a href="#faq">FAQ</a>
+        <a href="#ubicacion">Contacto</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <a href="https://wa.me/50661134646" target="_blank" class="hdr-wa" onclick="gtag&&gtag('event','whatsapp_click',{source:'header'})">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          6113-4646
+        </a>
+        <button class="hdr-hamburger" id="hdr-ham" aria-label="Menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio">
+  <div id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="container">
+        <div>
+          <span class="hero-eyebrow">San Pedro, San José · Costa Rica</span>
+          <h1 class="hero-title">LA JUGUETERÍA
+#1 DE 
+LOS MOTOCICLISTAS</h1>
+          <p class="hero-sub">El inventario más grande de Costa Rica en Accesorios, Repuestos y Equipo de Protección. Taller Profesional para todo tipo de motos.</p>
+          <div class="hero-ctas">
+            <a href="https://maps.google.com/maps?q=Locos+por+las+Motos+San+Pedro+Costa+Rica" target="_blank" class="btn btn-solid" onclick="gtag&&gtag('event','maps_click',{source:'hero'})">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Visitanos
+            </a>
+            <a href="https://wa.me/50661134646?text=Hola!%20Los%20contacto%20desde%20su%20web" target="_blank" class="btn btn-ghost" onclick="gtag&&gtag('event','whatsapp_click',{source:'hero'})">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-stat">+270mil</div>
+          <div class="hero-stat-lbl">Seguidores<br>en Facebook</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div id="trust">
+  <div class="trust-row">
+    <div class="trust-item"><span>🏪</span><strong>Inventario #1 del país</strong></div>
+    <div class="trust-item"><span>🔧</span><strong>Taller especializado — sin cita</strong></div>
+    <div class="trust-item"><span>🚚</span><strong>Envíos el mismo día a todo CR</strong></div>
+    <div class="trust-item"><span>👥</span><strong>+270 mil seguidores en Facebook</strong></div>
+    <div class="trust-item"><span>🏗️</span><strong>Fabricamos parrillas a medida</strong></div>
+  </div>
+</div>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="about-grid">
+    <div class="about-img">
+      <div class="about-img-tag">Desde siempre,<br>para los moteros</div>
+    </div>
+    <div class="about-body-wrap reveal">
+      <div>
+        <span class="section-eyebrow">Sobre nosotros</span>
+        <h2 class="section-heading">Somos la<br>juguetería<br><span class="dim">DE LOS MOTOCICLISTAS</span></h2>
+      </div>
+      <p class="section-body">En Locos por las Motos vas a encontrar lo que andás buscando… y mucho más. Somos la tienda con el inventario más grande del país: Accesorios, Repuestos y Equipo de Protección para todo tipo de motos.</p>
+      <p class="section-body">En nuestro Taller Profesional atendemos desde mantenimientos preventivos hasta reparaciones completas — instalamos lo que vendemos, adaptamos cualquier accesorio y hasta fabricamos parrillas a medida. Vení, date una vuelta.</p>
+      <div class="about-stats">
+        <div class="astat"><div class="astat-num">+270K</div><div class="astat-lbl">Seguidores en redes</div></div>
+        <div class="astat"><div class="astat-num">#1</div><div class="astat-lbl">Inventario en CR</div></div>
+        <div class="astat"><div class="astat-num">Hoy</div><div class="astat-lbl">Envíos mismo día</div></div>
+        <div class="astat"><div class="astat-num">7d</div><div class="astat-lbl">Abiertos de Lunes a Domingo</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos">
+  <div class="container">
+    <div class="prod-header reveal">
+      <div>
+        <span class="section-eyebrow">Nuestros productos</span>
+        <h2 class="section-heading">Lo que andás<br><span class="dim">buscando</span></h2>
+      </div>
+      <a href="https://maps.google.com/maps?q=Locos+por+las+Motos" target="_blank" class="prod-header-cta">Ver todo en tienda →</a>
+    </div>
+
+    <!-- Grupo 1 -->
+    <div class="prod-group reveal">
+      <div class="prod-group-label">🛡️ Equipo de protección</div>
+      <div class="prod-track">
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-cascos.jpg" alt="Cascos">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Cascos</div><div class="prod-card-sub">Integrales · Modulares · Cross</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-jackets.jpg" alt="Jackets">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Jackets</div><div class="prod-card-sub">Protección certificada</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-guantes.jpg" alt="Guantes">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Guantes</div><div class="prod-card-sub">Para ciudad y offroad</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-capas.jpg" alt="Capas de lluvia">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Capas de lluvia</div><div class="prod-card-sub">Impermeables premium</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-botas.jpg" alt="Botas">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Botas</div><div class="prod-card-sub">Calzado especializado</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-gafas.jpg" alt="Gafas y goggles">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Gafas y goggles</div><div class="prod-card-sub">Protección visual</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grupo 2 -->
+    <div class="prod-group reveal">
+      <div class="prod-group-label">⚙️ Accesorios para la moto</div>
+      <div class="prod-track">
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-cajones.jpg" alt="Cajones">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Cajones y maletas</div><div class="prod-card-sub">Top cases · Laterales</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-intercomunicadores.jpg" alt="Intercomunicadores">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Intercomunicadores</div><div class="prod-card-sub">Bluetooth para casco</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-camaras.jpg" alt="Cámaras">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Cámaras de acción</div><div class="prod-card-sub">Grabación en ruta</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-luces.jpg" alt="Luces LED">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Luces LED</div><div class="prod-card-sub">Auxiliares · Stops</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-soportes.jpg" alt="Soportes celular">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Soportes celular</div><div class="prod-card-sub">GPS · Carga USB</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-seguridad.jpg" alt="Seguridad">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Seguridad</div><div class="prod-card-sub">Alarmas · Candados</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grupo 3 -->
+    <div class="prod-group reveal">
+      <div class="prod-group-label">🔩 Repuestos y mantenimiento</div>
+      <div class="prod-track">
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-llantas.jpg" alt="Llantas">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Llantas</div><div class="prod-card-sub">Pirelli · Michelin · Dunlop</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-aceites.jpg" alt="Aceites">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Aceites</div><div class="prod-card-sub">Todas las viscosidades</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-filtros.jpg" alt="Filtros">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Filtros</div><div class="prod-card-sub">Aire · Aceite · Gasolina</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-baterias.jpg" alt="Baterías">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Baterías</div><div class="prod-card-sub">Para todo modelo</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-kits-arrastre.jpg" alt="Kits de arrastre">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Kits de arrastre</div><div class="prod-card-sub">Cadenas · Piñones</div></div>
+        </div>
+        <div class="prod-card">
+          <img class="prod-card-img" src="img/prod-escapes.jpg" alt="Escapes">
+          <div class="prod-card-border"></div>
+          <div class="prod-card-footer"><div class="prod-card-title">Escapes</div><div class="prod-card-sub">Performance · Originales</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prod-cta-strip reveal">
+      <div class="prod-cta-txt">¿No ves lo que buscás? <span style="color:var(--orange)">Pasá por la tienda</span> — seguro lo tenemos.</div>
+      <a href="https://maps.google.com/maps?q=Locos+por+las+Motos" target="_blank" class="btn btn-solid" onclick="gtag&&gtag('event','maps_click',{source:'products'})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Cómo llegar
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TALLER -->
+<section id="taller">
+  <div class="taller-bg"></div>
+  <div class="taller-inner">
+    <div class="container">
+      <div class="taller-grid">
+        <div class="taller-left reveal">
+          <span class="section-eyebrow">Taller especializado</span>
+          <h2 class="section-heading">Tu moto en<br><span class="dim">las mejores</span><br>manos</h2>
+          <div class="services-cols" style="margin-top:40px;">
+            <div class="svc"><div class="svc-dot"></div><span class="svc-name" style="font-size: 15px">Mantenimiento preventivo</span></div>
+            <div class="svc"><div class="svc-dot"></div><span class="svc-name" style="font-size: 15px">Cambio de aceite</span></div>
+            <div class="svc"><div class="svc-dot"></div><span class="svc-name" style="font-size: 15px">Ajuste de frenos</span></div>
+            <div class="svc"><div class="svc-dot"></div><span class="svc-name" style="font-size: 15px">Alineación y balanceo</span></div>
+            <div class="svc"><div class="svc-dot"></div><span class="svc-name" style="font-size: 15px">Diagnóstico electrónico</span></div>
+            <div class="svc"><div class="svc-dot"></div><span class="svc-name" style="font-size: 15px">Reparaciones generales</span></div>
+            <div class="svc"><div class="svc-dot"></div><span class="svc-name" style="font-size: 15px">Instalación accesorios</span></div>
+            <div class="svc"><div class="svc-dot"></div><span class="svc-name" style="font-size: 15px">Adaptación a cualquier moto</span></div>
+            <div class="svc featured"><div class="svc-dot"></div><span class="svc-name" style="font-size: 18px">🏗️ Fabricación de parrillas a medida — Servicio exclusivo</span></div>
+          </div>
+        </div>
+        <div class="taller-right reveal reveal-d2">
+          <div class="taller-callout">
+            <span class="section-eyebrow">Diferenciador único</span>
+            <h3 class="section-heading" style="font-size:clamp(2rem,4vw,3.2rem);">Fabricamos<br>parrillas para<br><span class="dim">cualquier moto</span></h3>
+            <p style="margin-top:20px;" class="section-body">¿Tu moto no tiene parrilla disponible en el mercado? Nosotros la fabricamos a medida. Saca tu cita para fabricacion de parrilla, llevá la moto, tomamos las medidas y la hacemos para que quede perfecta.</p>
+          </div>
+          <div style="margin-top: 40px; height: 98.125px">
+            <p class="section-body" style="margin-bottom:24px;">
+</p>
+            <a href="https://wa.me/50661134646?text=Hola!%20Quiero%20agendar%20cita%20en%20el%20taller" target="_blank" class="btn btn-wa" onclick="gtag&&gtag('event','whatsapp_click',{source:'taller'})" style="margin: 0px 0px 0px 35px">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Agendá tu cita
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENVÍOS -->
+<section id="envios">
+  <div class="container">
+    <div class="envios-layout">
+      <div class="envios-big-txt reveal">Hoy<br><small>mismo</small></div>
+      <div class="reveal reveal-d2">
+        <span class="section-eyebrow">Envíos a todo el país</span>
+        <h2 class="section-heading">Todo Costa Rica,<br><span class="dim">el mismo día</span></h2>
+        <p class="section-body" style="margin-top:20px;">Pedí lo que necesitás y te lo enviamos hoy mismo. Trabajamos con múltiples transportistas para que tu pedido llegue rápido y seguro.</p>
+        <div class="carriers">
+          <div class="carrier"><div class="carrier-icon">📮</div><div><div class="carrier-name">Correos de Costa Rica</div><div class="carrier-sub">Cobertura nacional</div></div></div>
+          <div class="carrier"><div class="carrier-icon">📦</div><div><div class="carrier-name">Encomiendas</div><div class="carrier-sub">Todo el país</div></div></div>
+          <div class="carrier"><div class="carrier-icon">🏍️</div><div><div class="carrier-name">Mensajero propio</div><div class="carrier-sub">San José y alrededores — mismo día</div></div></div>
+        </div>
+        <a href="https://wa.me/50661134646?text=Hola!%20Quiero%20hacer%20un%20pedido%20para%20envío" target="_blank" class="btn btn-solid" onclick="gtag&&gtag('event','whatsapp_click',{source:'envios'})">Pedí por WhatsApp — te lo enviamos hoy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="container">
+    <div class="gallery-intro reveal">
+      <span class="section-eyebrow">Galería</span>
+      <h2 class="section-heading">Vení a descubrir<br><span class="dim">NUESTRO INMENSO
+INVENTARIO</span></h2>
+      <p class="section-body">Nuestro local en San Pedro es único. Miles de productos esperándote.</p>
+    </div>
+    <div class="gal-grid reveal">
+      <div class="gal-item"><img src="img/gal-taller.jpg" alt="Taller"><div class="gal-overlay"><span>Taller</span></div></div>
+      <div class="gal-item"><img src="img/gal-cascos.jpg" alt="Cascos"><div class="gal-overlay"><span>Cascos</span></div></div>
+      <div class="gal-item"><img src="img/gal-equipo.jpg" alt="Equipo"><div class="gal-overlay"><span>Equipo</span></div></div>
+      <div class="gal-item"><img src="img/gal-llantas.jpg" alt="Llantas"><div class="gal-overlay"><span>Llantas</span></div></div>
+      <div class="gal-item"><img src="img/gal-tienda.jpg" alt="La tienda"><div class="gal-overlay"><span>La tienda</span></div></div>
+      <div class="gal-item"><img src="img/gal-accesorios.jpg" alt="Accesorios"><div class="gal-overlay"><span>Accesorios</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="container">
+    <div class="test-header reveal">
+      <span class="section-eyebrow">Lo que dicen nuestros clientes</span>
+      <h2 class="section-heading">+270 mil personas<br><span class="dim">no se equivocan</span></h2>
+    </div>
+    <div class="test-grid reveal">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"El inventario es impresionante. Encontré algo que llevaba meses buscando en otros lados. Atención de primera."</p>
+        <div class="test-author"><div class="test-avatar">🏍️</div><div><div class="test-name">Carlos Rodríguez</div><div class="test-meta">Cliente desde 2021 · San José</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"Me fabricaron una parrilla para mi moto que no existe en el mercado. Quedó perfecta. El taller es muy profesional."</p>
+        <div class="test-author"><div class="test-avatar">🔧</div><div><div class="test-name">Mauricio Solano</div><div class="test-meta">Motero fanático · Cartago</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"Pedí por WhatsApp y me llegó el mismo día. Increíble el servicio. Los cascos son de muy buena calidad."</p>
+        <div class="test-author"><div class="test-avatar">🪖</div><div><div class="test-name">Andrea Mora</div><div class="test-meta">Heredia</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"Llevo años comprando aquí. Nunca me han fallado. La mejor tienda de motos en Costa Rica sin duda alguna."</p>
+        <div class="test-author"><div class="test-avatar">⚡</div><div><div class="test-name">Roberto Jiménez</div><div class="test-meta">Cliente fiel · Alajuela</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REDES -->
+<section id="redes">
+  <div class="container">
+    <div class="redes-inner reveal">
+      <span class="section-eyebrow">Comunidad motera</span>
+      <div class="redes-giant">+270K</div>
+      <div class="redes-lbl">seguidores en Facebook</div>
+      <p class="redes-text">Seguinos para ver lo último que llega, consejos, ofertas y contenido para moteros. La comunidad motera más grande del país te espera.</p>
+      <div class="social-btns">
+        <a href="https://facebook.com/locosporlasmotoscr" target="_blank" class="social-btn sb-fb">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <div>Facebook<div style="font-size:0.7em;opacity:0.7;font-weight:400">+270K seguidores</div></div>
+        </a>
+        <a href="https://instagram.com/locosporlasmotoscr" target="_blank" class="social-btn sb-ig">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @locosporlasmotoscr
+        </a>
+        <a href="https://tiktok.com/@locosporlasmotoscr" target="_blank" class="social-btn sb-tt">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.12 8.12 0 004.77 1.52V6.77a4.85 4.85 0 01-1-.08z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div class="reveal">
+        <span class="section-eyebrow">FAQ</span>
+        <h2 class="section-heading">Resolvemos<br>tus<br><span class="dim">dudas</span></h2>
+      </div>
+      <div class="faq-list reveal reveal-d1">
+        <div class="faq-item open">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Qué tipos de motos atienden en el taller? <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-a">Todo tipo de motos, no importa la marca ni el modelo, en nuestro taller podemos ayudarte con cualquier problema en cualquier moto.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Hacen envíos a todo el país? <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-a">Sí, a todo Costa Rica. En San José y zonas cercanas con mensajero propio, mismo día. Resto del país por Correos de Costa Rica y Encomiendas.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Tienen repuestos para mi modelo? <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-a">Tenemos el inventario más grande del país. Visitanos o escribinos por WhatsApp y lo confirmamos. También lo conseguimos si no está en stock.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Necesito cita para el taller? <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-a">No es necesaria. Podés venir directo y te tendemos al momento.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Cuáles son los métodos de pago? <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-a">Efectivo, Tarjeta de débito/crédito, SINPE Movil, Transferencia, Depósito, Minicuotas BAC, Credix, Monge Pay y Emma Pay.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Fabrican parrillas para cualquier moto? <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-a">Sí, es uno de nuestros servicios exclusivos. Traés la moto, tomamos las medidas y la fabricamos para que quede perfecta.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Instalan los accesorios que venden? <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-a">Sí, todo lo que vendemos lo instalamos. Comprá el accesorio y nuestro taller lo monta en tu moto de una sola vez.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Cuál es el horario? <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-a">Lun–Vie: 8:30–18:00 · Sáb: 8:30–15:00 · Dom: 9:30–14:00. ¡Te esperamos!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion">
+  <div class="container" style="padding:0;">
+    <div style="padding:0 40px;margin-bottom:48px;" class="reveal">
+      <span class="section-eyebrow">Ubicación y contacto</span>
+      <h2 class="section-heading">¿Dónde <span class="dim">encontrarnos?</span></h2>
+    </div>
+  </div>
+  <div class="ubicacion-grid">
+    <div class="ubicacion-info reveal">
+      <div class="ubi-item">
+        <div class="ubi-icon">📍</div>
+        <div><div class="ubi-label">Dirección</div><div class="ubi-val">25m al este del Banco Popular<br>San Pedro, Montes de Oca, San José</div></div>
+      </div>
+      <div class="ubi-item">
+        <div class="ubi-icon">📞</div>
+        <div><div class="ubi-label">Teléfonos</div><div class="ubi-val"><a href="tel:+50625242301" onclick="gtag&&gtag('event','call_click')">2524-2301</a> / <a href="tel:+50625242312">2524-2312</a></div></div>
+      </div>
+      <div class="ubi-item">
+        <div class="ubi-icon">📱</div>
+        <div><div class="ubi-label">WhatsApp</div><div class="ubi-val"><a href="https://wa.me/50661134646" target="_blank" style="color:var(--orange)">6113-4646</a></div></div>
+      </div>
+      <div class="ubi-item">
+        <div class="ubi-icon">🕐</div>
+        <div>
+          <div class="ubi-label">Horario</div>
+          <div class="ubi-val">
+            <div class="ubi-hor">
+              <span class="ubi-hor-day">Lun — Vie</span><span class="ubi-hor-time">8:30 AM – 6:00 PM</span>
+              <span class="ubi-hor-day">Sábados</span><span class="ubi-hor-time">8:30 AM – 3:00 PM</span>
+              <span class="ubi-hor-day">Domingos</span><span class="ubi-hor-time">9:30 AM – 2:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ubi-btns">
+        <a href="https://maps.google.com/maps?q=Locos+por+las+Motos+San+Pedro+Costa+Rica" target="_blank" class="btn btn-solid" onclick="gtag&&gtag('event','maps_click',{source:'contact'})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Cómo llegar
+        </a>
+        <a href="tel:+50625242301" class="btn btn-ghost" onclick="gtag&&gtag('event','call_click',{source:'contact_btn'})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14h0v2.92z"/></svg>
+          Llamar
+        </a>
+      </div>
+    </div>
+    <div class="map-wrap reveal reveal-d1">
+      <iframe src="https://maps.google.com/maps?q=Locos+por+las+Motos,+San+Pedro,+Montes+de+Oca,+San+José,+Costa+Rica&output=embed" allowfullscreen loading="lazy" title="Ubicación Locos por las Motos"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
+<section id="contacto">
+  <div class="container">
+    <div class="form-layout">
+      <div class="reveal">
+        <span class="section-eyebrow">Contacto directo</span>
+        <h2 class="section-heading">¿Tenés una<br><span class="dim">consulta?</span></h2>
+        <p class="form-note-txt">Llená el formulario y te respondemos pronto.<br><br>¿Preferís hablar directo? Escribinos al <strong>6113-4646</strong> — te respondemos rapidito.</p>
+        <a href="https://wa.me/50661134646" target="_blank" class="btn btn-wa" onclick="gtag&&gtag('event','whatsapp_click',{source:'form'})">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Escribir por WhatsApp
+        </a>
+      </div>
+      <form class="reveal reveal-d1" onsubmit="handleForm(event)">
+        <div class="field-row">
+          <div><label for="nombre">Nombre</label><input type="text" id="nombre" placeholder="Tu nombre" required></div>
+          <div><label for="tel">Teléfono</label><input type="tel" id="tel" placeholder="8888-8888" required></div>
+        </div>
+        <div><label for="moto">Modelo de moto <span style="font-weight:400;text-transform:none;letter-spacing:0">(opcional)</span></label><input type="text" id="moto" placeholder="Ej: Honda CB 300"></div>
+        <div><label for="msg">Mensaje</label><textarea id="msg" placeholder="¿En qué te podemos ayudar?" required></textarea></div>
+        <button type="submit" class="btn btn-solid" onclick="gtag&&gtag('event','form_submit')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Enviar consulta
+        </button>
+        <div class="form-success" id="form-ok">¡Gracias! Te contactamos pronto. 🏍️</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#inicio" class="ftr-logo"><img src="assets/logo.png" alt="Logo"><div class="ftr-logo-txt">Locos por<span>las Motos</span></div></a>
+        <p class="ftr-tagline">La juguetería #1 de los motociclistas. El inventario más grande de Costa Rica en accesorios, repuestos y equipo de protección.</p>
+        <div class="ftr-socials">
+          <a href="https://facebook.com/locosporlasmotoscr" target="_blank" class="ftr-soc" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://instagram.com/locosporlasmotoscr" target="_blank" class="ftr-soc" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://tiktok.com/@locosporlasmotoscr" target="_blank" class="ftr-soc" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.12 8.12 0 004.77 1.52V6.77a4.85 4.85 0 01-1-.08z"/></svg></a>
+          <a href="https://wa.me/50661134646" target="_blank" class="ftr-soc" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+        </div>
+      </div>
+      <div class="ftr-col">
+        <h5>Navegación</h5>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#productos">Productos</a>
+        <a href="#taller">Taller</a>
+        <a href="#galeria">Galería</a>
+        <a href="#faq">FAQ</a>
+        <a href="#ubicacion">Contacto</a>
+      </div>
+      <div class="ftr-col">
+        <h5>Productos</h5>
+        <a href="#productos">Cascos</a>
+        <a href="#productos">Jackets</a>
+        <a href="#productos">Llantas</a>
+        <a href="#productos">Cajones</a>
+        <a href="#productos">Repuestos</a>
+        <a href="#productos">Accesorios</a>
+      </div>
+      <div class="ftr-col">
+        <h5>Contacto</h5>
+        <p>📍 San Pedro, Montes de Oca, San José</p>
+        <p style="margin-top:8px;">📞 <a href="tel:+50625242301" style="color:rgba(255,255,255,0.55);text-decoration:none;">2524-2301</a></p>
+        <p>📱 <a href="https://wa.me/50661134646" target="_blank" style="color:var(--orange);text-decoration:none;">6113-4646</a></p>
+        <p style="margin-top:8px;font-size:0.75rem;">Lun–Vie 8:30–18:00<br>Sáb 8:30–15:00<br>Dom 9:30–14:00</p>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <div class="footer-copy">© 2026 Locos por las Motos. Todos los derechos reservados.</div>
+      <div class="footer-copy">Hecho con ❤️ para los moteros de Costa Rica 🇨🇷</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div id="wa-float">
+  <a href="https://wa.me/50661134646?text=Hola!%20Los%20contacto%20desde%20su%20página%20web" target="_blank" class="wa-float-btn" title="WhatsApp" onclick="gtag&&gtag('event','whatsapp_click',{source:'float'})">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+
+<script>
+  // Header scroll
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('solid', window.scrollY > 60), {passive:true});
+
+  // Hamburger
+  document.getElementById('hdr-ham').addEventListener('click', () => {
+    document.getElementById('hdr-nav').classList.toggle('open');
+  });
+  document.querySelectorAll('#hdr-nav a').forEach(a => a.addEventListener('click', () => document.getElementById('hdr-nav').classList.remove('open')));
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+  }, {threshold: 0.08, rootMargin: '0px 0px -30px 0px'});
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // Hero parallax
+  const heroBg = document.querySelector('.hero-bg');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < window.innerHeight)
+      heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+  }, {passive:true});
+
+  // Form
+  function handleForm(e) {
+    e.preventDefault();
+    const n = document.getElementById('nombre').value;
+    const t = document.getElementById('tel').value;
+    const m = document.getElementById('moto').value;
+    const msg = document.getElementById('msg').value;
+    const txt = `Hola! Me llamo ${n} (tel: ${t})${m ? ', moto: '+m : ''}. ${msg}`;
+    window.open('https://wa.me/50661134646?text=' + encodeURIComponent(txt), '_blank');
+    document.getElementById('form-ok').style.display = 'block';
+    e.target.reset();
+    gtag && gtag('event', 'form_submit', {source: 'contact_form'});
+  }
+</script>
+
+</body>
+</html>
